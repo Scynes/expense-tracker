@@ -1,10 +1,11 @@
+import { ExpenseItem } from "@common/types";
+
 interface Properties {
-    data: []
+    expenses: ExpenseItem[],
+    onDelete: (index: number) => void,
 }
 
-const ExpenseTable = ( { data }: Properties ) => {
-
-    console.log(data);
+const ExpenseTable = ( { expenses }: Properties ) => {
 
     return (
         <table className="table">
@@ -16,6 +17,16 @@ const ExpenseTable = ( { data }: Properties ) => {
                     <th>Amount</th>
                 </tr>
             </thead>
+            <tbody>
+            { expenses.map((expense, index) => (
+                <tr key={ index }>
+                    <td>{ expense.date }</td>
+                    <td>{ expense.description }</td>
+                    <td>{ expense.category }</td>
+                    <td>{ expense.amount}</td>
+                </tr>
+            )) }
+            </tbody>
         </table>
     );
 }

@@ -3,26 +3,21 @@ import '@assets/index.css';
 
 import { useState } from 'react';
 
+import { ExpenseItem } from '@common/types';
+
 import ExpenseForm from '@components/ExpenseForm';
 import ExpenseTable from '@components/ExpenseTable';
 
 const App = () => {
 
-    const [ expenseList, setExpenseList ] = useState<ExpenseItem[]>([
-        {
-            date: 'test',
-            description: 'dasd',
-            category: 'something',
-            amount: 2342
-        }
-    ]);
+    const [ expenseList, setExpenseList ] = useState<ExpenseItem[]>([]);
 
-    console.log(expenseList)
+    const onDelete = (index: number) => console.log('Attempted to delete index:', index)
 
     return (
         <>
         <ExpenseForm />
-        <ExpenseTable expenseList={expenseList} />
+        <ExpenseTable expenses={expenseList} onDelete={onDelete}/>
         </>
     );
 }
