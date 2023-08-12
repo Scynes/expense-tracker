@@ -88,6 +88,21 @@ form {
     padding: 2rem;
 }
 
-table {
+.table-container {
     padding: 2rem;
+}
+
+.table-header > th {
+    width: calc(100% / 5);
+}
+
+.table-header > th:nth-child(5) {
+    width: 10%;
+}
+
+@media (max-width: 450px) {
+
+    .desktop-only {
+        display: none;
+    }
 }

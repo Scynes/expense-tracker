@@ -1,6 +1,6 @@
 interface ExpenseItem {
     date: string,
-    description: string,
+    title: string,
     category: string,
     amount: number
 }

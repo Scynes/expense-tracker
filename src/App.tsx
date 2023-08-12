@@ -13,21 +13,27 @@ const App = () => {
 
     const [ expenseList, setExpenseList ] = useState<ExpenseItem[]>([
         {
-            date: 'test 1',
+            date: '01/02/2023',
             amount: 234234,
-            description: 'woah',
+            title: 'woah',
             category: 'Groceries'
         },
         {
-            date: 'test 2',
+            date: '01/02/2023',
             amount: 234234,
-            description: 'woah',
+            title: 'woah',
             category: 'Groceries'
         }
     ]);
 
+    /**
+     * Deletes an ExpenseItem from the ExpenseList based on index position.
+     * 
+     * @param index The index of the entry to remove.
+     */
     const onDelete = (index: number) => {
         
+        // Immer producer the modifying the existing state
         setExpenseList(previous => produce(previous, draft => {
             draft.splice(index, 1);
         }));

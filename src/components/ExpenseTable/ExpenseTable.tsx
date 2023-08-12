@@ -10,30 +10,32 @@ interface Properties {
 const ExpenseTable = ( { expenses, onDelete }: Properties ) => {
 
     return (
-        <table className="table">
-            <thead className="table-dark">
-                <tr>
-                    <th>Date</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>Amount</th>
-                    <th><AiTwotoneDelete size={25}/></th>
-                </tr>
-            </thead>
-            <tbody>
-            { expenses.map((expense, index) => (
-                <tr key={ index }>
-                    <td>{ expense.date }</td>
-                    <td>{ expense.description }</td>
-                    <td>{ expense.category }</td>
-                    <td>{ expense.amount}</td>
-                    <td>
-                        <button className="btn btn-dark" onClick={() => onDelete(index)}>Delete</button>
-                    </td>
-                </tr>
-            )) }
-            </tbody>
-        </table>
+        <div className="table-container table-responsive">
+            <table className="table">
+                <thead className="table-dark">
+                    <tr className="table-header">
+                        <th className='desktop-only'>Date</th>
+                        <th>Title</th>
+                        <th className='desktop-only'>Category</th>
+                        <th>Amount</th>
+                        <th className='text-center'><AiTwotoneDelete size={25}/></th>
+                    </tr>
+                </thead>
+                <tbody>
+                { expenses.map((expense, index) => (
+                    <tr key={ index }>
+                        <td className='desktop-only align-middle'>{ expense.date }</td>
+                        <td className='align-middle'>{ expense.title }</td>
+                        <td className='desktop-only align-middle'>{ expense.category }</td>
+                        <td className='align-middle'>{ expense.amount}</td>
+                        <td>
+                            <button className="btn btn-dark width-full" onClick={() => onDelete(index)}>Delete</button>
+                        </td>
+                    </tr>
+                )) }
+                </tbody>
+            </table>
+        </div>
     );
 }
 
