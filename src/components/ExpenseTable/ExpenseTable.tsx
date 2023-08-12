@@ -1,3 +1,5 @@
+import { AiTwotoneDelete } from 'react-icons/ai';
+
 import { ExpenseItem } from "@common/types";
 
 interface Properties {
@@ -5,7 +7,7 @@ interface Properties {
     onDelete: (index: number) => void,
 }
 
-const ExpenseTable = ( { expenses }: Properties ) => {
+const ExpenseTable = ( { expenses, onDelete }: Properties ) => {
 
     return (
         <table className="table">
@@ -15,6 +17,7 @@ const ExpenseTable = ( { expenses }: Properties ) => {
                     <th>Description</th>
                     <th>Category</th>
                     <th>Amount</th>
+                    <th><AiTwotoneDelete size={25}/></th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +27,9 @@ const ExpenseTable = ( { expenses }: Properties ) => {
                     <td>{ expense.description }</td>
                     <td>{ expense.category }</td>
                     <td>{ expense.amount}</td>
+                    <td>
+                        <button className="btn btn-dark" onClick={() => onDelete(index)}>Delete</button>
+                    </td>
                 </tr>
             )) }
             </tbody>
