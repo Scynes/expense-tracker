@@ -13,13 +13,26 @@ const App = () => {
     const [ expenseList, setExpenseList ] = useState<ExpenseItem[]>([]);
 
     /**
+     * Adds a new ExpenseItem entry to the expenseList and updates the state.
+     * 
+     * @param data 
+     */
+    const onSubmit = (data: ExpenseItem) => {
+
+        // Immer producer for modifying the existing state with an addition
+        setExpenseList(previous => produce(previous, draft => {
+            draft.push(data);
+        }));
+    }
+
+    /**
      * Deletes an ExpenseItem from the ExpenseList based on index position.
      * 
      * @param index The index of the entry to remove.
      */
     const onDelete = (index: number) => {
         
-        // Immer producer the modifying the existing state
+        // Immer producer for modifying the existing state with a deletion
         setExpenseList(previous => produce(previous, draft => {
             draft.splice(index, 1);
         }));
@@ -27,7 +40,7 @@ const App = () => {
 
     return (
         <div className='app-container'>
-            <ExpenseForm />
+            <ExpenseForm onSubmit={onSubmit}/>
             <ExpenseTable expenses={expenseList} onDelete={onDelete}/>
         </div>
     );

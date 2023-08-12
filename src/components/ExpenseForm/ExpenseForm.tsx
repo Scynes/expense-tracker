@@ -1,18 +1,21 @@
-import { FieldValues, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import { ExpenseItem } from '@common/types';
 
-const ExpenseForm = () => {
+interface Properties {
+    onSubmit: ([]: ExpenseItem) => void,
+}
 
-    const { register, handleSubmit, formState: { isValid } } = useForm();
+const ExpenseForm = ({ onSubmit }: Properties) => {
+
+    const { register, handleSubmit, formState: { isValid } } = useForm<ExpenseItem>();
 
     const categories = ['Groceries', 'Utilities', 'Entertainment'];
-
-    const onSubmit = (data: FieldValues) => console.log(data);
 
     return (
         <form className="" onSubmit={ handleSubmit(onSubmit) }>
             <div className="form-floating mb-3">
-                <input { ...register('description', { required: 'Please enter' }) } type="text" id="description" className="form-control" />
-                <label htmlFor="description">Description</label>
+                <input { ...register('title', { required: 'Please enter' }) } type="text" id="title" className="form-control" />
+                <label htmlFor="title">Description</label>
             </div>
             <div className="form-floating mb-3">
                 <input { ...register('amount', { required: true }) } type="text" id="amount" className="form-control" />
