@@ -1,4 +1,10 @@
-const ExpenseTable = () => {
+interface Properties {
+    data: []
+}
+
+const ExpenseTable = ( { data }: Properties ) => {
+
+    console.log(data);
 
     return (
         <table className="table">

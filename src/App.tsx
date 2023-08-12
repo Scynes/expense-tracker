@@ -6,21 +6,23 @@ import { useState } from 'react';
 import ExpenseForm from '@components/ExpenseForm';
 import ExpenseTable from '@components/ExpenseTable';
 
-interface ExpenseItem {
-    date: string,
-    description: string,
-    category: string,
-    amount: number
-}
-
 const App = () => {
 
-    const [ expenseList, setExpenseList ] = useState<ExpenseItem[]>([]);
+    const [ expenseList, setExpenseList ] = useState<ExpenseItem[]>([
+        {
+            date: 'test',
+            description: 'dasd',
+            category: 'something',
+            amount: 2342
+        }
+    ]);
+
+    console.log(expenseList)
 
     return (
         <>
         <ExpenseForm />
-        <ExpenseTable />
+        <ExpenseTable expenseList={expenseList} />
         </>
     );
 }
