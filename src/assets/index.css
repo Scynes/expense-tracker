@@ -83,8 +83,11 @@ html, body, #root {
 /* --------------- *
  *   APPLICATION   *
  * --------------- */
-
 form {
     max-width: 30rem;
+    padding: 2rem;
+}
+
+table {
     padding: 2rem;
 }
