@@ -83,13 +83,12 @@ html, body, #root {
 /* --------------- *
  *   APPLICATION   *
  * --------------- */
-form {
-    max-width: 30rem;
+body {
     padding: 2rem;
 }
 
-.table-container {
-    padding: 2rem;
+form {
+    max-width: 25rem;
 }
 
 .table-header > th {
