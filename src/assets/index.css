@@ -91,7 +91,6 @@ form {
 
 .app-container {
     display: flex;
-    height: 100%;
     gap: 2rem;
     padding: 2rem;
 }
@@ -112,5 +111,16 @@ form {
 
     .app-container {
         flex-direction: column;
+    }
+
+    .table-container {
+        max-height: 20rem;
+    }
+}
+
+@media (min-width: 450px) {
+
+    .app-container {
+        height: 100%;
     }
 }
