@@ -31,10 +31,10 @@ const ExpenseForm = ({ onSubmit }: Properties) => {
         <form className="" onSubmit={ handleSubmit(handleFormSubmit) }>
             <div className="form-floating mb-3">
                 <input { ...register('title', { required: 'Please enter' }) } type="text" id="title" className="form-control" />
-                <label htmlFor="title">Description</label>
+                <label htmlFor="title">Title</label>
             </div>
             <div className="form-floating mb-3">
-                <input { ...register('amount', { required: true }) } type="text" id="amount" className="form-control" />
+                <input { ...register('amount', { required: true, pattern: /^[0-9]+(\.[0-9]{1,2})?$/ }) } type="text" id="amount" className="form-control" />
                 <label htmlFor="amount">Amount</label>
             </div>
             <div className="form-floating mb-3">
@@ -54,7 +54,6 @@ const ExpenseForm = ({ onSubmit }: Properties) => {
                 <label htmlFor="date">Choose a Date</label>
             </div>
             <button className="mb-3 btn btn-dark btn-lg w-100" type="submit" disabled={ !isValid }>Submit</button>
-            
             { submitted &&
                 <div className="alert alert-success d-flex align-items-center gap-3" role='alert'>
                     <BsFillInfoCircleFill />
