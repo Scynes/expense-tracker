@@ -40,10 +40,10 @@ const App = () => {
     }
 
     return (
-        <>
-        <ExpenseForm />
-        <ExpenseTable expenses={expenseList} onDelete={onDelete}/>
-        </>
+        <div className='app-container'>
+            <ExpenseForm />
+            <ExpenseTable expenses={expenseList} onDelete={onDelete}/>
+        </div>
     );
 }
 

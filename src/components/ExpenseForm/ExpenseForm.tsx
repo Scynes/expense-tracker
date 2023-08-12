@@ -9,7 +9,7 @@ const ExpenseForm = () => {
     const onSubmit = (data: FieldValues) => console.log(data);
 
     return (
-        <form className="width-full" onSubmit={ handleSubmit(onSubmit) }>
+        <form className="" onSubmit={ handleSubmit(onSubmit) }>
             <div className="form-floating mb-3">
                 <input { ...register('description', { required: 'Please enter' }) } type="text" id="description" className="form-control" />
                 <label htmlFor="description">Description</label>

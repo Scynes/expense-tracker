@@ -10,7 +10,7 @@ interface Properties {
 const ExpenseTable = ( { expenses, onDelete }: Properties ) => {
 
     return (
-        <div className="table-container table-responsive">
+        <div className="table-container table-responsive width-full">
             <table className="table table-striped table-bordered rounded-top-3 overflow-hidden">
                 <thead className="table-dark">
                     <tr className="table-header">
