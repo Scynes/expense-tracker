@@ -24,7 +24,7 @@ const ExpenseForm = ({ onSubmit }: Properties) => {
         // Set a timeout for removal of the submission alert with state change
         setTimeout(() => setSubmitted(false), 5000);
         // Reset the form input
-        reset();
+        //reset();
     }
 
     return (

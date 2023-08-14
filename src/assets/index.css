@@ -106,6 +106,10 @@ form {
     animation: spin 4s infinite linear;
 }
 
+.table-container {
+    max-height: 37rem;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
