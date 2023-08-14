@@ -83,7 +83,6 @@ html, body, #root {
 /* --------------- *
  *   APPLICATION   *
  * --------------- */
-
 form {
     max-width: 25rem;
     width: 100%;
@@ -101,6 +100,20 @@ form {
 
 .table-header > th:nth-child(5) {
     width: 10%;
+}
+
+.spin-icon {
+    animation: spin 4s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
 }
 
 @media (max-width: 450px) {

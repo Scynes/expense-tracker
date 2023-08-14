@@ -27,7 +27,7 @@ const ExpenseTable = ( { expenses, onDelete }: Properties ) => {
                         <td className='desktop-only align-middle'>{ expense.date }</td>
                         <td className='align-middle'>{ expense.title }</td>
                         <td className='desktop-only align-middle'>{ expense.category }</td>
-                        <td className='align-middle'>{ expense.amount}</td>
+                        <td className='align-middle'>${ expense.amount}</td>
                         <td>
                             <button className="btn btn-dark width-full" onClick={() => onDelete(index)}>Delete</button>
                         </td>

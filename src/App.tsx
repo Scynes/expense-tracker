@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { produce } from 'immer';
 import { ExpenseItem } from '@common/types';
 
+import NavBar from '@components/NavBar';
 import ExpenseForm from '@components/ExpenseForm';
 import ExpenseTable from '@components/ExpenseTable';
 
@@ -39,9 +40,12 @@ const App = () => {
     }
 
     return (
-        <div className='app-container'>
-            <ExpenseForm onSubmit={onSubmit}/>
-            <ExpenseTable expenses={expenseList} onDelete={onDelete}/>
+        <div>
+            <NavBar />
+            <div className='app-container'>
+                <ExpenseForm onSubmit={onSubmit}/>
+                <ExpenseTable expenses={expenseList} onDelete={onDelete}/>
+            </div>
         </div>
     );
 }
