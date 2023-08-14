@@ -12,7 +12,7 @@ const ExpenseForm = ({ onSubmit }: Properties) => {
 
     const [ submitted, setSubmitted ] = useState(false);
 
-    const { register, reset, handleSubmit, formState: { isValid } } = useForm<ExpenseItem>();
+    const { register, handleSubmit, formState: { isValid } } = useForm<ExpenseItem>();
 
     const categories = ['Groceries', 'Utilities', 'Entertainment'];
 
@@ -23,8 +23,6 @@ const ExpenseForm = ({ onSubmit }: Properties) => {
         setSubmitted(true);
         // Set a timeout for removal of the submission alert with state change
         setTimeout(() => setSubmitted(false), 5000);
-        // Reset the form input
-        //reset();
     }
 
     return (
