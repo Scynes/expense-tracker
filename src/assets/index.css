@@ -1,0 +1,143 @@
+/* ------------- *
+ *   CSS Reset   *
+ * ------------- */
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+/* ---------- *
+ *   GLOBAL   *
+ * ---------- */
+:root {
+    /* background colors */
+
+    /* other colors */
+    --white-col: white;
+}
+
+/* ----------- *
+ *   UTILITY   *
+ * ----------- */
+.height-full {
+    height: 100%;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.borderless {
+    border: none !important;
+}
+
+.outlineless {
+    outline: none;
+}
+
+/* -------- *
+ *   FLEX   *
+ * -------- */
+.flex {
+    display: flex;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.flex.grow-1 {
+    flex-grow: 1;
+}
+
+.flex.align-space-between {
+    align-items: space-between;
+}
+
+/* -------- *
+ *   GRID   *
+ * -------- */
+.grid {
+    display: grid;
+}
+
+/* --------------- *
+ *   FLEX / GRID   *
+ * --------------- */
+.align-center:is(.flex, .grid) {
+    align-items: center;
+}
+
+.justify-center:is(.flex, .grid) {
+    justify-content: center;
+}
+
+/* --------------- *
+ *   APPLICATION   *
+ * --------------- */
+form {
+    max-width: 25rem;
+    width: 100%;
+}
+
+.app-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.table-header > th {
+    width: calc(100% / 5);
+}
+
+.table-header > th:nth-child(5) {
+    width: 10%;
+}
+
+.spin-icon {
+    animation: spin 4s infinite linear;
+}
+
+.table-container {
+    max-height: 37rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+@media (max-width: 450px) {
+
+    .desktop-only {
+        display: none;
+    }
+
+    .app-container {
+        flex-direction: column;
+    }
+
+    .table-container {
+        max-height: 20rem;
+    }
+}
+
+@media (min-width: 450px) {
+
+    .app-container {
+        height: 100%;
+    }
+}
